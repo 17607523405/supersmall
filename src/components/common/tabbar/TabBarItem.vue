@@ -4,7 +4,7 @@
     <div v-if="!isactive">
       <slot name="item-icon"></slot>
     </div>
-    <div v-else="isactive">
+    <div v-else>
       <slot name="item-icon-active"></slot>
     </div>
     <div :style="activeStyle" >

@@ -2,12 +2,12 @@
   <div id="swipe">
     <div class="swipe" v-for="(i,index) in swipe" :key="index">
       <a :href="i.link">
-        <img :src="i.image" alt=""
-        ref="swipe"
-        v-show="showIndex === index"
-        :key="index"
-        @touchstart="clearGoSwipe"
-        @touchend="goSwipe" @load="imageLoad">
+        <img :src="i" alt=""
+             ref="swipe"
+             v-show="showIndex === index"
+             :key="index"
+             @touchstart="clearGoSwipe"
+             @touchend="goSwipe" @load="imageLoad">
       </a>
     </div>
     <div class="spanList" ref="spanList">
@@ -97,12 +97,14 @@
   }
 
   #swipe {
+    height: 300px;
     position: relative;
     overflow: hidden;
   }
 
   .swipe {
     display: flex;
+    overflow: hidden;
   }
 
   .list {

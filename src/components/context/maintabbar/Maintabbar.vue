@@ -15,7 +15,7 @@
       <img slot="item-icon-active" src="~assets/img/tabbar/buy-active.svg" alt="">
       <div slot="item-text">购物车</div>
     </tab-bar-item>
-    <tab-bar-item path="/preson" activeColor="blue">
+    <tab-bar-item path="/person" activeColor="blue">
       <img slot="item-icon" src="~assets/img/tabbar/preson.svg" alt="">
       <img slot="item-icon-active" src="~assets/img/tabbar/preson-active.svg" alt="">
       <div slot="item-text">我的</div>

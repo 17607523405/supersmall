@@ -1,13 +1,126 @@
 <template>
-    <h1>个人</h1>
+ <div class="pert">
+   <scroll class="preson">
+     <ul>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+       <li>列表数据</li>
+     </ul>
+   </scroll>
+
+  </div>
 </template>
 
 <script>
+  import Scroll from "components/common/scroll/Scroll";
     export default {
-        name: "preson"
+        name: "preson",
+      components:{
+          Scroll
+      }
     }
 </script>
 
 <style scoped>
-
+ .preson{
+   height: 300px;
+   color: #ff5777;
+ }
 </style>
