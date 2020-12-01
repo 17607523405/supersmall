@@ -97,7 +97,7 @@
   }
 
   #swipe {
-    height: 300px;
+    height: 350px;
     position: relative;
     overflow: hidden;
   }

@@ -1,6 +1,6 @@
 <template>
 <div class="goodsitem">
-  <img :src="goodsItem.show.img" alt="" @load="imgload" @click="itemclick">
+  <img :src="showimage" alt="" @load="imgload" @click="itemclick">
   <div class="goodsinfo">
     <p>{{goodsItem.title}}</p>
     <span class="price">{{goodsItem.price}}</span>
@@ -30,6 +30,12 @@
 
            this.$router.push('/detail/'+this.goodsItem.iid)
         }
+      },
+      computed:{
+          showimage(){
+            //判断传入的数据是image还是show.img
+            return this.goodsItem.image ||this.goodsItem.show.img
+          }
       }
     }
 </script>

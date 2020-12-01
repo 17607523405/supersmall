@@ -37,24 +37,26 @@
 <style scoped>
 .info-title{
  font-size: 15px;
-  margin-top: 6px;
+  margin-top: 10px;
+  margin-left: 8px;
 }
 .info-price{
   margin-top: 8px;
-  margin-left: 5px;
+  margin-left: 20px;
 }
 .n-price{
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-hight-text);
 }
   .o-price{
     font-size: 6px;
     color: #666666;
     text-decoration: line-through;
-    margin-left: 8px;
+    margin-left: 10px;
+
   }
   .info-discount{
-    margin-left: 14px;
+    margin-left: 24px;
     /*background-color: #ff5777;*/
     font-size: 16px;
     color: var(--color-hight-text);
@@ -75,15 +77,17 @@
 
   }
   .info-service{
-    margin-top: 15px;
+    margin-top: 10px;
     font-size: 12px;
     display: flex;
+    line-height: 80px;
+    height: 80px;
     border-top: solid 1px darkgray;
-    border-bottom: solid 1px darkgray;
+    border-bottom: solid 3px darkgray;
 
   }
   .info-service-item{
-    padding-top: 8px;
+    /*padding-top: 8px;*/
     text-align: center;
     flex: 1;
     padding-bottom: 8px;
