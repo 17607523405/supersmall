@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-  import Backtop from "components/context/BackTop/Backtop";
+
   import Scroll from "components/common/scroll/Scroll";
   import Goods from "components/context/goods/Goods";
   import TabConrol from "components/context/tabconrol/TabConrol";
@@ -29,10 +29,12 @@
 
   import {homedata} from "network/home";
   import {gethomerequest} from 'network/home'
-  import {debounce} from "common/until";
+
+  import {mixin,backtopmix} from "common/mixin";
 
   export default {
     name: "home",
+    mixins:[mixin,backtopmix],
     components: {
       navbar,
       swiper,
@@ -41,7 +43,7 @@
       TabConrol,
       Goods,
       Scroll,
-      Backtop
+
 
 
     },
@@ -55,9 +57,10 @@
           sell:{page:0,list:[]},
         },
         currenttype:'pop',
-        isshow:false,
+
         TabConrolheight:0,
         tabshow:false,
+
         scrolly:0//记录离开home时的位置
       }
     },
@@ -71,14 +74,10 @@
 
     },
     mounted() {
-      //3.监听item图片加载完成,并且使用debounce函数解决多次刷新问题
-      const refresh=debounce( this.$refs.scroll.refresh,50)
-      this.$bus.$on('itemimgload',()=>{
-        refresh()
-        // console.log('图片加载完成')
-      })
+  this.tabconclick(0)
     },
     methods: {
+
      //获取轮播图加载完成，得到offsettop的长度有利于TabConrol的固定位置
       swipeImageLoad(){
         console.log(this.$refs.tabconrol.$el.offsetTop)
@@ -88,7 +87,7 @@
       //获取子组件传递过来的滚动位置
       contentscroll(position){
         // console.log(position);
-        //1判断是否显示backtop组件
+        //1判断是否显示backtop组件,isshow是在mixin里面的变量进行混入
         this.isshow=-(position.y)>1000
         //2.判断是否显示tabconrol
         this.tabshow=-(position.y)>this.TabConrolheight
@@ -96,9 +95,7 @@
 
 
       //返回顶部的事件，组件如果需要监听原生态事件必须使用native属性
-      backtop(){
-        this.$refs.scroll.scrollto(0,0)
-      },
+
       loadmore(){
         this.gethomedata(this.currenttype);
         //解决图片没有加载出来无法向下滚动问题
@@ -150,8 +147,10 @@
       this.$refs.scroll.refresh();
     },
     deactivated() {
+      //记录离开时的位置
       this.scrollY=this.$refs.scroll.getscrolly()
-
+     //离开时关闭全局事件
+      this.$bus.$off('itemimgload',this.itemlisten)
     }
   }
 </script>

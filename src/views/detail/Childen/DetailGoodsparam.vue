@@ -72,4 +72,9 @@
     letter-spacing: 1px;
 
   }
+  .info-img img{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
 </style>

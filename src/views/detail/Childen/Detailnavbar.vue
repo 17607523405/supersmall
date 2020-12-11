@@ -27,6 +27,7 @@
       methods:{
         itemclick(index){
           this.countindex=index
+          this.$emit('itemclick',index)
         },
         backitem(){
           this.$router.back()
