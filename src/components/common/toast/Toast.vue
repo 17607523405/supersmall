@@ -14,7 +14,7 @@
           }
       },
       methods:{
-          show(message,dution){
+          show(message='默认文字',dution=2000){
             this.message=message
             this.isShow=true
             setTimeout(()=>{

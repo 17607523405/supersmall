@@ -16,6 +16,7 @@
 </template>
 
 <script>
+  import {mapActions} from 'vuex'
   import Detailbottom from "./Childen/Detailbottom";
   import DetailComment from "./Childen/DetailComment";
   import DetailGoodsparam from "./Childen/DetailGoodsparam";
@@ -94,6 +95,7 @@
         })
       },
       methods:{
+          ...mapActions(['addcart']),
         swipeImageLoad(){
                //解决无法向下滚动的bug
                this.$refs.scroll.refresh();
@@ -149,7 +151,10 @@
           product.iid=this.iid
 
           //2.将商品加入购物车中的vuex
-          this.$store.dispatch('addcart',product)
+          this.addcart(product).then(res =>{
+             console.log(res)
+            this.$toast.show(res,2000)
+          })
 
         }
       },

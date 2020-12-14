@@ -1,11 +1,11 @@
 <template>
     <div class="bottom-nav">
       <div class="checkbutton">
-        <CheckButton  :checkshow="false"/>
+        <CheckButton  :checkshow="checkall" @click.native="checkbutoon" />
       </div>
       <p>全选</p>
       <div class="price">合计:{{totprice}}</div>
-      <div class="counter">去计算{{counter}}</div>
+      <div class="counter" @click="counterclick">去计算{{counter}}</div>
     </div>
 </template>
 
@@ -33,8 +33,24 @@
             }).reduce((preval,item)=>{
               return preval +item.count
             },0)
-
-
+        },
+        checkall(){
+            if (this.cartlists.length === 0) return false
+          return !this.cartlists.find(item => !item.checked)
+        }
+      },
+      methods:{
+        checkbutoon(){
+          if (this.checkall){
+            return this.cartlists.forEach(item => item.checked=false)
+          }else {
+            return  this.cartlists.forEach(item => item.checked=true)
+          }
+        },
+        counterclick(){
+         if (!this.checkall){
+           this.$toast.show('请选择商品',2000)
+         }
         }
       }
     }
@@ -62,6 +78,7 @@
     flex: 1;
   }
   .counter{
+    color: #f6f6f6;
     width: 100px;
     margin-right: 0;
     background-color: red;
