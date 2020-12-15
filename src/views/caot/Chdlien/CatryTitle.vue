@@ -3,8 +3,9 @@
 
     <Scroll class="content" ref="scroll">
      <div>
-       <div v-for="(item,index) in cartytitle" :key="index" class="catrytitle-item">
-         {{item.title}}
+       <div v-for="(item,index) in cartytitle" :key="index" class="catrytitle-item"
+            @click="titleclick(index)" :class="{active:index===count}">
+         <span>{{item.title}}</span>
        </div>
 
      </div>
@@ -20,6 +21,11 @@
 
     export default {
         name: "CatryTitle",
+      data(){
+        return{
+          count:0
+        }
+      },
         props:{
           cartytitle:{
             type:Array,
@@ -29,9 +35,14 @@
           }
         },
       components:{
-
           Scroll
       },
+     methods:{
+       titleclick(index){
+         this.count=index
+         this.$emit('titleclick',index)
+       }
+     },
       activated() {
         this.$refs.scroll.refresh()
       },
@@ -43,6 +54,8 @@
 <style scoped>
   .catrytitle{
     height: calc(100% - 44px - 49px );
+    width: 20%;
+
   }
 
 .content{
@@ -50,6 +63,15 @@
   overflow: hidden;
 }
   .catrytitle-item{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .active{
+    color: var(--color-hight-text);
+  }
+  .active span{
+    color: var(--color-tint);
+    border-bottom: 3px solid var(--color-tint);
+
   }
 </style>
